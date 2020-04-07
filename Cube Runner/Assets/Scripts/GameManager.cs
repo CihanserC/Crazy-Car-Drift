@@ -4,27 +4,40 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    bool GameHasEnded = false;
 
+    bool GameEnded = false;
     public float restartDelay = 2f;
+    public GameObject LevelCompletedUI;
+    public GameObject GameOverUI;
 
-    public GameObject CompleteLevelUI;
-   public void EndGame()
+    //public GameObject player;
+
+    public void EndGame()
     {
-
-        if(GameHasEnded == false)
+        if(GameEnded == false)
         {
             Debug.Log("Game Over!");
-            GameHasEnded = true;
+            GameEnded = true;
             Invoke("Restart", restartDelay);
         }
     
     }
-    public void CompleteLevel()
-    {
-        Debug.Log("Level Won!");
-        CompleteLevelUI.SetActive(true);
 
+    public void OnTriggerEnter(Collider col)
+    {
+        if(col.tag=="Finish")
+        {
+
+            Debug.Log("Level Won!");
+            LevelCompletedUI.SetActive(true);
+        }
+
+        if(col.tag=="Obstacle")
+        {
+
+            Debug.Log("You Lost!");
+            GameOverUI.SetActive(true);
+        }
     }
 
     public void Restart()
@@ -32,5 +45,4 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-   
 }

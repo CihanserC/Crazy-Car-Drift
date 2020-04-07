@@ -8,18 +8,27 @@ public class PlayerCollision : MonoBehaviour
     public PlayerMovement movement;
     public GameManager gamemanager;
 
-    private void OnCollisionEnter(Collision collisionInfo)
+    public GameObject GameOverUI;
+    public GameObject LevelCompletedUI;
+
+
+    private void OnCollisionEnter(Collision col)
     {
-        Debug.Log(collisionInfo.collider.name);
 
-        if(collisionInfo.collider.tag == "Obstacle")
+        if(col.collider.tag == "Obstacle")
         {
-            //Debug.Log("We hit an obstacle!");
-
+            Debug.Log("We hit an obstacle!");
             movement.enabled = false;
-            FindObjectOfType<GameManager>().EndGame();
 
+            GameOverUI.SetActive(true);
+           // FindObjectOfType<GameManager>().EndGame();
 
+        }
+        else if(col.collider.tag == "Finish Line")
+        {
+            Debug.Log("Level Won!");
+            movement.enabled = false;
+            LevelCompletedUI.SetActive(true);
         }
 
 
