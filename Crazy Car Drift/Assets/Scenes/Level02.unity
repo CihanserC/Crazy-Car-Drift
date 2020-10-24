@@ -964,6 +964,16 @@ PrefabInstance:
       propertyPath: GameOverUI
       value: 
       objectReference: {fileID: 1737941122}
+    - target: {fileID: 6958489444599766143, guid: 58cd1a38a76c1e74d802c89ab6092d99,
+        type: 3}
+      propertyPath: forwardForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958489444599766143, guid: 58cd1a38a76c1e74d802c89ab6092d99,
+        type: 3}
+      propertyPath: sidewayForce
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58cd1a38a76c1e74d802c89ab6092d99, type: 3}
 --- !u!54 &185781542 stripped

@@ -5,12 +5,12 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
 
-    public float forwardforce = 5000f;
+    public float forwardForce = 5000f;
 
-    public float sidewayforce = 80f;
+    public float sidewayForce = 80f;
 
-    public bool LeftDir  = false;
-    public bool RightDir = false;
+    public bool LeftDirection  = false;
+    public bool RightDirection = false;
 
     void Start()
     {
@@ -24,25 +24,25 @@ public class PlayerMovement : MonoBehaviour
 
     public void GoLeftButton()
     {
-        LeftDir = true;
+        LeftDirection = true;
         //rb.AddForce(-sidewayforce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
     }
 
     public void ReverseLeftButton() // This is important, when user put up his finger from the button it stops the force applied on the player
     {
-        LeftDir = false;
+        LeftDirection = false;
         //rb.AddForce(-sidewayforce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
     }
 
 
     public void GoRightButton()
     {
-        RightDir = true;
+        RightDirection = true;
     }
 
     public void ReverseRightButton()
     {
-        RightDir = false;
+        RightDirection = false;
     }
 
     // Update is called once per frame
@@ -51,33 +51,40 @@ public class PlayerMovement : MonoBehaviour
 
         //***************** For the keyboard***********
 
-        rb.AddForce(0,0, forwardforce * Time.deltaTime);
+        //rb.AddForce(0,0, forwardForce * Time.deltaTime);
+        rb.velocity = new Vector3(0, 0, forwardForce);
 
-        if(Input.GetKey("d"))
+
+        if (Input.GetKey("d"))
         {
-            rb.AddForce(sidewayforce * Time.deltaTime ,0 ,0 , ForceMode.VelocityChange);
+            //rb.AddForce(sidewayForce * Time.deltaTime ,0 ,0 , ForceMode.VelocityChange);
+            rb.velocity = new Vector3(sidewayForce, 0, forwardForce);
+
+
         }
 
         if (Input.GetKey("a"))
         {
-            rb.AddForce( - sidewayforce * Time.deltaTime, 0, 0 , ForceMode.VelocityChange);
+            //rb.AddForce( - sidewayForce * Time.deltaTime, 0, 0 , ForceMode.VelocityChange);
+            rb.velocity = new Vector3(-sidewayForce, 0, forwardForce);
+
         }
 
-        if(rb.position.y < -1f)
+        if (rb.position.y < -1f)
         {
             FindObjectOfType<GameManager>().EndGame();
         }
 
         //***************** For the virtual buttons***********
 
-        if(LeftDir == true)
+        if(LeftDirection == true)
         {
-            rb.AddForce(-sidewayforce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            rb.AddForce(-sidewayForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
         }
-        if (RightDir == true)
+        if (RightDirection == true)
         {
-            rb.AddForce(sidewayforce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            rb.AddForce(sidewayForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
         }
     }

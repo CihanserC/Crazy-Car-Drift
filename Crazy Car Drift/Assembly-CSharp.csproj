@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6F03C154-A8E8-6A7C-796C-BC877FBB3F26}</ProjectGuid>
+    <ProjectGuid>{EFF4C755-47B3-CB92-BB5E-C805F91B1315}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -63,10 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CameraRotator.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\LevelCompletedMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MovingObstacle.cs" />
     <Compile Include="Assets\Scripts\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerCollision.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
@@ -253,13 +255,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/User/Documents/GitHub/GameProjects/Cube Runner/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Crazy Car Drift/Crazy Car Drift/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/User/Documents/GitHub/GameProjects/Cube Runner/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Crazy Car Drift/Crazy Car Drift/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/User/Documents/GitHub/GameProjects/Cube Runner/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Crazy Car Drift/Crazy Car Drift/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -618,71 +620,71 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{583D0711-6516-8536-3DC3-953F836F998E}</Project>
+      <Project>{211F7174-A754-5ED1-595C-51E40E9DB213}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{B8B42037-41E7-FB60-7239-79BDF5528683}</Project>
+      <Project>{52E013FD-8F92-187C-0EE7-DB342C1D231D}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.Monetization.csproj">
-      <Project>{B3905586-35C9-8FA6-0D9C-DFBADF5BAEDA}</Project>
+      <Project>{FCD44D44-6FA9-4152-3BAD-016AB6805242}</Project>
       <Name>UnityEngine.Monetization</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{0427756E-CAC0-255A-F2B5-FEDC75813881}</Project>
+      <Project>{31C84285-8911-4EC1-E919-6582A172C321}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.Advertisements.csproj">
-      <Project>{D4EBD2F1-0A13-4499-BAAD-638A718EF251}</Project>
+      <Project>{62051B39-FCE1-7DB1-CF9C-334BDB5D0093}</Project>
       <Name>UnityEngine.Advertisements</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.Purchasing.csproj">
-      <Project>{50D20292-64D3-493F-85A0-74E92F430FC9}</Project>
+      <Project>{AF3A7F68-8BDF-58D0-0703-D93DB39F1934}</Project>
       <Name>UnityEngine.Purchasing</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.Purchasing.csproj">
-      <Project>{B059C894-1C90-5691-C467-5478132D7D57}</Project>
+      <Project>{6B96B954-1E5C-0A96-A627-BFDB0CE32268}</Project>
       <Name>UnityEditor.Purchasing</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{3CF72C89-411B-DB16-5105-DBBC1781742D}</Project>
+      <Project>{FF5AC146-0302-24E5-ECE4-14D38C561D25}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{C086AD38-37A9-CFB2-6A31-5C7BD3C7B643}</Project>
+      <Project>{D00BA88E-419F-2EDF-B4E6-12F16E282B1D}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{2A1631EF-839B-0C3D-8224-6B53063D7B96}</Project>
+      <Project>{CAD0D2D6-4A82-7A7E-D66B-929FF25DE7F5}</Project>
       <Name>Unity.Timeline</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
-      <Project>{EB62FB98-2D63-F170-5CF0-51A960B1D5FE}</Project>
+      <Project>{25C40EAE-31E0-CC7F-9997-3A22001A9DBB}</Project>
       <Name>Unity.CollabProxy.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{2A0B7BFE-B7A1-080A-F7A8-674A52558BBC}</Project>
+      <Project>{1CCA9018-A832-9CB0-41A6-F0F2D9540981}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
-      <Project>{2EF26B28-A49A-F9A5-CEDD-B83386F867C8}</Project>
+      <Project>{36AF2739-3841-F7D2-BDFA-8F6FF0CA9FF5}</Project>
       <Name>Unity.2D.Sprite.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
-      <Project>{5CC1689A-BDCC-0E36-E661-F79FA371AD39}</Project>
+      <Project>{0DAF8246-7E60-CAB1-D464-2B0F040C73C1}</Project>
       <Name>Unity.2D.Tilemap.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{A2D318D0-51BE-B98F-CCB4-67A673FCABD1}</Project>
+      <Project>{57DD5B5B-B960-D928-4D4F-0A75950E993F}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Analytics.DataPrivacy.csproj">
-      <Project>{2251D78D-9777-5C0A-A547-47ECD7A9ABE4}</Project>
+      <Project>{72A2C870-57A2-3ED4-0038-D134732CCE3E}</Project>
       <Name>Unity.Analytics.DataPrivacy</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{D370DC26-190A-D4BE-180D-9C55BD47B073}</Project>
+      <Project>{A93D1DC9-CA75-F00A-928A-F3D57D168814}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>

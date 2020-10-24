@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6A1A3FE1-FC4A-B194-9F2F-90F95BBD42FA}</ProjectGuid>
+    <ProjectGuid>{EF6C2A14-6FDE-C40C-CCA4-B6A77611CBC5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>UnityEngine.TestRunner</AssemblyName>
@@ -365,7 +365,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Users/User/Documents/GitHub/GameProjects/Cube Runner/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Crazy Car Drift/Crazy Car Drift/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

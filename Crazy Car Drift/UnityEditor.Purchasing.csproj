@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B059C894-1C90-5691-C467-5478132D7D57}</ProjectGuid>
+    <ProjectGuid>{6B96B954-1E5C-0A96-A627-BFDB0CE32268}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>UnityEditor.Purchasing</AssemblyName>
@@ -267,7 +267,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Users/User/Documents/GitHub/GameProjects/Cube Runner/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Users/User/Documents/GitHub/Crazy Car Drift/Crazy Car Drift/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -626,23 +626,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEngine.Purchasing.csproj">
-      <Project>{50D20292-64D3-493F-85A0-74E92F430FC9}</Project>
+      <Project>{AF3A7F68-8BDF-58D0-0703-D93DB39F1934}</Project>
       <Name>UnityEngine.Purchasing</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{D370DC26-190A-D4BE-180D-9C55BD47B073}</Project>
+      <Project>{A93D1DC9-CA75-F00A-928A-F3D57D168814}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{C086AD38-37A9-CFB2-6A31-5C7BD3C7B643}</Project>
+      <Project>{D00BA88E-419F-2EDF-B4E6-12F16E282B1D}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{FA5B5790-DC7A-4A7F-912E-1F75FB35EEA8}</Project>
+      <Project>{6EABDFBB-9DA8-D3BE-6C2B-8F458C293AFF}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{6A1A3FE1-FC4A-B194-9F2F-90F95BBD42FA}</Project>
+      <Project>{EF6C2A14-6FDE-C40C-CCA4-B6A77611CBC5}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
