@@ -6,25 +6,37 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
 
     public float forwardForce = 5000f;
-
     public float sidewayForce = 80f;
 
     public bool LeftDirection  = false;
     public bool RightDirection = false;
+    public GameObject GameOverUI;
+    //public GameObject Player;
 
     void Start()
     {
-        
+        Time.timeScale = 1;
     }
 
     void Update()
     {
-        
+        if (rb.position.x < -33 || rb.position.x> -8)
+        {
+            Time.timeScale = 0;
+            GameOverUI.SetActive(true);
+
+        }
+    }
+
+    public void AllowMovement()
+    {
+
     }
 
     public void GoLeftButton()
     {
         LeftDirection = true;
+        //Debug.Log("Left!!!");
         //rb.AddForce(-sidewayforce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
     }
 
@@ -79,12 +91,14 @@ public class PlayerMovement : MonoBehaviour
 
         if(LeftDirection == true)
         {
-            rb.AddForce(-sidewayForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            rb.velocity = new Vector3(-sidewayForce, 0, forwardForce);
+            //rb.AddForce(-sidewayForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
         }
         if (RightDirection == true)
         {
-            rb.AddForce(sidewayForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            rb.velocity = new Vector3(sidewayForce, 0, forwardForce);
+            //rb.AddForce(sidewayForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
         }
     }

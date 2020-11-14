@@ -1,17 +1,41 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+
+
 
 
 public class GameManager : MonoBehaviour
 {
 
-    bool GameEnded = false;
+    bool GameEnded = false; 
+    private bool isPaused = false;
+
     public float restartDelay = 2f;
     public GameObject LevelCompletedUI;
     public GameObject GameOverUI;
+    public GameObject PauseGameUI;
 
     //public GameObject player;
 
+    public void PauseGame()
+    {
+        isPaused = !isPaused;
+
+        if(isPaused == true)
+        {
+            PauseGameUI.SetActive(true);
+            Time.timeScale = 0; // Freeze the game
+            //isPaused = false;
+        }
+        else
+        {
+            PauseGameUI.SetActive(false);
+            Time.timeScale = 1; // Continue to the game
+            //isPaused = true;
+        }
+    }
     public void EndGame()
     {
         if(GameEnded == false)
@@ -43,6 +67,25 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void RetryLevel()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GotoMainMenu()
+    {
+
+        SceneManager.LoadScene(0);
+
+    }
+
+    public void NextLevel()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }

@@ -17,8 +17,8 @@ public class PlayerCollision : MonoBehaviour
 
         if(col.collider.tag == "Obstacle")
         {
-            Debug.Log("We hit an obstacle!");
-            movement.enabled = false;
+            Time.timeScale = 0;
+            //movement.enabled = false;
 
             GameOverUI.SetActive(true);
            // FindObjectOfType<GameManager>().EndGame();
