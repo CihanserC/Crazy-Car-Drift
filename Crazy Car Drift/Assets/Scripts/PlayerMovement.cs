@@ -8,9 +8,13 @@ public class PlayerMovement : MonoBehaviour
     public float forwardForce = 5000f;
     public float sidewayForce = 80f;
 
-    public bool LeftDirection  = false;
-    public bool RightDirection = false;
+    public bool LeftDirection  = false; // Its for mobile button inputs 
+    public bool RightDirection = false; // Its for mobile button inputs
     public GameObject GameOverUI;
+
+    public bool LeftWall =  false;
+    public bool RightWall = false;
+
     //public GameObject Player;
 
     void Start()
@@ -20,11 +24,25 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (rb.position.x < -33 || rb.position.x> -8)
+        if (rb.position.x < -33f || rb.position.x> -8f)
         {
             Time.timeScale = 0;
             GameOverUI.SetActive(true);
 
+        }
+
+        if(rb.position.x < -32.150f)
+        {
+            LeftWall = true; // player hits the wall and needs to stop move left. If LeftWall is true dont dont move left.
+        }
+        else if (rb.position.x > -9.5f)
+        {
+            RightWall = true; // Same logic applies for RightWall
+        }
+        else
+        {
+            LeftWall = false;
+            RightWall = false;
         }
     }
 
@@ -67,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(0, 0, forwardForce);
 
 
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") && RightWall== false)
         {
             //rb.AddForce(sidewayForce * Time.deltaTime ,0 ,0 , ForceMode.VelocityChange);
             rb.velocity = new Vector3(sidewayForce, 0, forwardForce);
@@ -75,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if (Input.GetKey("a"))
+        if (Input.GetKey("a") && LeftWall == false)
         {
             //rb.AddForce( - sidewayForce * Time.deltaTime, 0, 0 , ForceMode.VelocityChange);
             rb.velocity = new Vector3(-sidewayForce, 0, forwardForce);
@@ -89,13 +107,13 @@ public class PlayerMovement : MonoBehaviour
 
         //***************** For the virtual buttons***********
 
-        if(LeftDirection == true)
+        if(LeftDirection == true && LeftWall == false)
         {
             rb.velocity = new Vector3(-sidewayForce, 0, forwardForce);
             //rb.AddForce(-sidewayForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
         }
-        if (RightDirection == true)
+        if (RightDirection == true && RightWall == false)
         {
             rb.velocity = new Vector3(sidewayForce, 0, forwardForce);
             //rb.AddForce(sidewayForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);

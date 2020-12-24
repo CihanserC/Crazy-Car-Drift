@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
     {
 
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
 
     }
 
